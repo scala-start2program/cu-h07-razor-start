@@ -1,0 +1,80 @@
+﻿@page
+@model Wba.StovePalace.Pages.Stoves.DetailsModel
+
+@{
+    ViewData["Title"] = "Detail kachel";
+    string imagePath = "~/images/" + (Model.Stove.ImagePath ?? "noimage.jpg");
+}
+
+<h1>Detailgegevens kachel</h1>
+
+<div>
+    <hr />
+    <div class="col-md-6">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Stove.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Stove.Brand.BrandName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                @Html.DisplayNameFor(model => model.Stove.Fuel)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Stove.Fuel.FuelName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                @Html.DisplayNameFor(model => model.Stove.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Stove.ModelName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                @Html.DisplayNameFor(model => model.Stove.Performance)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Stove.Performance)
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                @Html.DisplayNameFor(model => model.Stove.SalesPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Stove.SalesPrice)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Afbeelding
+            </td>
+            <td>
+                <img class="imageThumbnail" src="@imagePath" asp-append-version="true" />
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+<hr />
+<div>
+    <div class="btn-group">
+        <a asp-page="./Edit" asp-route-id="@Model.Stove.Id" class="btn  btn-warning" title="Wijzigen">
+            <i class="fas fa-pencil-alt"></i>
+        </a>
+        <a asp-page="./Index" class="btn btn-success" title="Terug naar overzicht">
+            <i class="fas fa-undo-alt"></i>
+        </a>
+    </div>
+</div>
